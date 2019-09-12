@@ -11,7 +11,7 @@ int main() {
 
     int soma = 0;
 
-    //PREENCHER O VETOR
+    //LOOP PARA PREENCHER O VETOR
     do {
 
         cout << "Adicione um valor inteiro ao vetor:";
@@ -23,6 +23,7 @@ int main() {
 
     } while (continuar == "s");
 
+    //LOOP PARA MENU DE OPERACOES SOBRE O VETOR
     do {
 
         cout << "[";
@@ -43,6 +44,7 @@ int main() {
         cout << "Digite uma opcao: ";
         cin >> opcao;
 
+        // OPERADOR DE ESCOLHA
         switch (opcao){
 
             case 1 :
@@ -55,6 +57,7 @@ int main() {
                 cout << "Soma do vetor:" << soma <<endl;
 
             break;
+            //FIM CASE 1 --------------------------------------
 
             case 2 :
                 soma = 0;
@@ -64,7 +67,8 @@ int main() {
                 }
 
                 cout << "Media do vetor:" << soma / numeros.size() << endl;
-                break;
+            break;
+            //FIM CASE 2 --------------------------------------
 
             case 4 :
                 for (int i = 0; i < numeros.size(); ++i) {
@@ -74,6 +78,7 @@ int main() {
                 }
 
             break;
+            //FIM CASE 4 --------------------------------------
 
             case 5 :
 
@@ -86,6 +91,7 @@ int main() {
                 }
 
             break;
+            //FIM CASE 5 --------------------------------------
 
             case 6 :
 
@@ -97,6 +103,8 @@ int main() {
                 cout << "]";
 
             break;
+            //FIM CASE 6 --------------------------------------
+
         }
 
     } while(opcao != 0);
