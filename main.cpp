@@ -106,11 +106,9 @@ int main() {
                 cout << "]";
 
             break;
-
         }
 
     } while(opcao != 0);
-
 
     return 0;
 }
