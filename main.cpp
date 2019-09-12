@@ -23,16 +23,17 @@ int main() {
 
     } while (continuar == "s");
 
-    cout << "[";
-    for (int x  : numeros) {
-        cout << x << ",";
-    }
-    cout << "]";
-
-
     do {
 
-        cout << "************************************" << endl;
+        cout << "[";
+        for (int x  : numeros) {
+            cout << x << ",";
+        }
+        cout << "]";
+
+        system("cls");
+
+        cout << endl << "************************************" << endl;
         cout << "[1] para somar os elementos da lista" << endl;
         cout << "[2] para obter a media dos elementos da lista" << endl;
         cout << "[3] para obter a media dos elementos da lista" << endl;
@@ -45,6 +46,7 @@ int main() {
         switch (opcao){
 
             case 1 :
+                soma = 0;
 
                 for (int valor  : numeros) {
                     soma += valor;
@@ -55,6 +57,7 @@ int main() {
             break;
 
             case 2 :
+                soma = 0;
 
                 for (int valor  : numeros) {
                     soma += valor;
@@ -70,12 +73,6 @@ int main() {
                     }
                 }
 
-                cout << "[";
-                for (int x  : numeros) {
-                    cout << x << ",";
-                }
-                cout << "]";
-
             break;
 
             case 5 :
@@ -87,12 +84,6 @@ int main() {
                         }
                     }
                 }
-
-                cout << "[";
-                for (int x  : numeros) {
-                    cout << x << ",";
-                }
-                cout << "]";
 
             break;
 
