@@ -32,7 +32,14 @@ int main() {
 
     do {
 
-        cout << "Digite uma opcao:";
+        cout << "************************************" << endl;
+        cout << "[1] para somar os elementos da lista" << endl;
+        cout << "[2] para obter a media dos elementos da lista" << endl;
+        cout << "[3] para obter a media dos elementos da lista" << endl;
+        cout << "[4] para obter a media dos elementos da lista" << endl;
+        cout << "[5] para substituir os elementos negativos por 0" << endl;
+        cout << "[6] para obter os elementos da lista ordenada" << endl;
+        cout << "Digite uma opcao: ";
         cin >> opcao;
 
         switch (opcao){
@@ -72,6 +79,7 @@ int main() {
             break;
 
             case 5 :
+
                 for (int x = 0; x < numeros.size(); x++) {
                     for (int y = 0; y < numeros.size(); y++) {
                         if (x != y && numeros[x] == numeros[y]){
@@ -89,12 +97,15 @@ int main() {
             break;
 
             case 6 :
+
                 sort(numeros.begin(), numeros.end());
                 cout << "[";
                 for (int x  : numeros) {
                     cout << x << ",";
                 }
                 cout << "]";
+
+            break;
 
         }
 
