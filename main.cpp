@@ -1,113 +1,69 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-
 using namespace std;
 
-int main() {
+int main (){
+setlocale(LC_ALL, "Portuguese");
     vector<int> numeros;
-    int numero, opcao;
-    string continuar;
+    int controle, NumeroDeNumeros, Soma,i;
+    double media;
+    controle = 0;
+    Soma = 0;
+    NumeroDeNumeros = 0;
+    media = 0;
+    cout << "Digite qualquer numeros inteiros para realizar uma operação ou digite [0] para as operacoes" << endl;
+    // Digitar numeros
+    while (i != 0){
+        cin >> i;
+        numeros.push_back(i);
+        NumeroDeNumeros++;
+    }
 
-    int soma = 0;
+    // Fim de digitar numeros
+    // Decisões
+    int decisao = 1;
+    while (decisao != 0){
+        cout << endl << endl;
+        cout << "Digite [1] para: Imprimir a somatória de seus elementos\n";
+        cout << "Digite [2] para: Imprimir a média de seus elementos\n";
+        cout << "Digite [3] para: Imprimir a média e a somatória\n";
+        cout << "Digite [4] para: Substituir por zero todos os valores negativos e imprimir a média\n";
+        cout << "Digite [5] para: Substituir por zero todos os valores repetidos e imprimir a média e a somatória\n";
+        cout << "Digite [6] para: Mostrar vetor ordenado\n\n";
 
-    //LOOP PARA PREENCHER O VETOR
-    do {
 
-        cout << "Adicione um valor inteiro ao vetor:";
-        cin >> numero;
-        numeros.push_back(numero);
+    cin >> decisao;
+    cout << endl << endl;
 
-        cout << "Deseja adicionar mais um numero?(s ou n):";
-        cin >> continuar;
+    switch (decisao){
 
-    } while (continuar == "s");
+    case 1:
+    for (int i = 0; i < NumeroDeNumeros; i++){
+        Soma += numeros[i];
+    }
+    cout << "A somatória de todos os elementos é: " << Soma << endl;
+        break;
+        
+    case 2:
+    for (int i = 0; i < NumeroDeNumeros; i++){
+        Soma += numeros[i];
+    }
+    NumeroDeNumeros--;
+    media = Soma / NumeroDeNumeros;
+    cout << media;
 
-    //LOOP PARA MENU DE OPERACOES SOBRE O VETOR
-    do {
 
-        cout << "[";
-        for (int x  : numeros) {
-            cout << x << ",";
-        }
-        cout << "]";
 
-        system("cls");
 
-        cout << endl << "************************************" << endl;
-        cout << "[1] para somar os elementos da lista" << endl;
-        cout << "[2] para obter a media dos elementos da lista" << endl;
-        cout << "[3] para obter a media dos elementos da lista" << endl;
-        cout << "[4] para obter a media dos elementos da lista" << endl;
-        cout << "[5] para substituir os elementos negativos por 0" << endl;
-        cout << "[6] para obter os elementos da lista ordenada" << endl;
-        cout << "Digite uma opcao: ";
-        cin >> opcao;
 
-        // OPERADOR DE ESCOLHA
-        switch (opcao){
 
-            case 1 :
-                soma = 0;
 
-                for (int valor  : numeros) {
-                    soma += valor;
-                }
 
-                cout << "Soma do vetor:" << soma <<endl;
-
-            break;
-            //FIM CASE 1 --------------------------------------
-
-            case 2 :
-                soma = 0;
-
-                for (int valor  : numeros) {
-                    soma += valor;
-                }
-
-                cout << "Media do vetor:" << soma / numeros.size() << endl;
-            break;
-            //FIM CASE 2 --------------------------------------
-
-            case 4 :
-                for (int i = 0; i < numeros.size(); ++i) {
-                    if (numeros[i] < 0){
-                        numeros[i] = 0;
-                    }
-                }
-
-            break;
-            //FIM CASE 4 --------------------------------------
-
-            case 5 :
-
-                for (int x = 0; x < numeros.size(); x++) {
-                    for (int y = 0; y < numeros.size(); y++) {
-                        if (x != y && numeros[x] == numeros[y]){
-                            numeros[y] = 0;
-                        }
-                    }
-                }
-
-            break;
-            //FIM CASE 5 --------------------------------------
-
-            case 6 :
-
-                sort(numeros.begin(), numeros.end());
-                cout << "[";
-                for (int x  : numeros) {
-                    cout << x << ",";
-                }
-                cout << "]";
-
-            break;
-            //FIM CASE 6 --------------------------------------
 
         }
+    }
 
-    } while(opcao != 0);
+
 
     return 0;
 }
